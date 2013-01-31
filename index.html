@@ -16,39 +16,57 @@
     <div class="wrapper">
       <header>
         <h1>Styleguide</h1>
-        <p>General styleguide for Chambers Judd web projects</p>
+        <p>General guidelines for Chambers Judd web projects</p>
 
 
         <p class="view"><a href="https://github.com/chambersjudd">View My GitHub Profile</a></p>
 
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+        <p>This is an overview of the tools and techniques we use project to project. It will change over time and we're not married to it so think of it as guidelines rather than gospel.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<hr><h4>General</h4>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<ul>
+<li>Assets should be an assets folder in the root, i.e.
+/assets/css
+/assets/js
+/assets/img</li>
+<li>When editing code, use spaces not tabs</li>
+<li>If in doubt, write a comment - assume you won't be there when someone else opens the file</li>
+</ul><hr><h4>CSS</h4>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>Written using SASS in <a href="http://smacss.com/book/categorizing">SMACCS structure</a>.</li>
+<li>Comments should be written using <a href="https://github.com/kneath/kss">KSS syntax</a>
+</li>
+<li>Comments should be ruby (i.e. // not /* )</li>
+<li>Use <a href="http:Bourbon.io">Bourbon</a> mixins</li>
+<li>Use classes not ID's wherever possible</li>
+<li>Give JS only classes a js- prefix</li>
+</ul><hr><h4>JS</h4>
 
-<h3>Designer Templates</h3>
+<ul>
+<li>All JS should be tested against JS Lint. There is a <a href="https://github.com/fbzhong/sublime-jslint">Sublime Text plugin</a> which let's you do this as you go. </li>
+<li>Minify JS prior to production (or on the fly with a Sublime Text Build Task) using Uglify JS</li>
+<li>Write code in modules. <a href="http://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/">CSS Tricks module pattern</a> is a good example.</li>
+</ul><hr><h4>Images</h4>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ul>
+<li>Use sprites where possible - <a href="http://www.spritecow.com/">Spritecow</a> is a useful tool for this</li>
+<li>Minify large images using imageoptim prior to production</li>
+</ul><hr><h4>Git</h4>
 
-<h3>Rather Drive Stick?</h3>
+<ul>
+<li>Always pull a repository before you start working to check it's up to date </li>
+<li>Create tags for releases. These should be preceded by the date and include a description e.g. 20120101-site-launch</li>
+</ul><hr><h4>Databases</h4>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+<li>Databases should be named with the tech as a prefix, then the project shortname (e.g. for an expressionengine site it would be 'ee_projectname')</li>
+<li>Database exports should be gzipped where possible and exported to a _database folder in the root of the project</li>
+<li>Exported DB dumps should be prefixed by the date and include the initials of the person working on it - e.g. 20120101-JC-ee_projectname.sql.gz</li>
+</ul>
       </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
